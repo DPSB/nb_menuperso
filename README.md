@@ -15,12 +15,12 @@ Pour pointer du doigt avec la manette : Clic joystick droit
 Si besoin changer les points GPS dans le fichier config.lua
 
 ## NECESSAIRE
-https://github.com/indilo53/fivem-es_extended
-https://github.com/FXServer-ESX/fxserver-esx_phone
-https://github.com/FXServer-ESX/fxserver-esx_billing
-https://github.com/FXServer-ESX/fxserver-esx_policejob
-https://github.com/FXServer-ESX/fxserver-esx_ambulancejob
-https://github.com/FXServer-ESX/fxserver-esx_mecanojob
+https://github.com/ESX-Org/es_extended
+https://github.com/ESX-Org/esx_phone
+https://github.com/ESX-Org/esx_billing
+https://github.com/ESX-Org/esx_policejob
+https://github.com/ESX-Org/esx_ambulancejob
+https://github.com/ESX-Org/esx_mecanojob
 
 ## INSTALLATION
 Copier le dossier "nb_menuperso" dans resources
@@ -35,15 +35,13 @@ Modifier le es_extended/client/main.lua pour commenter les lignes suivante :
 -- Menu interactions
 Citizen.CreateThread(function()
 	while true do
+		Wait(0)
 
-  	Wait(0)
-
-  	if IsControlPressed(0, Keys["F2"]) and not ESX.UI.Menu.IsOpen('default', 'es_extended', 'inventory') and (GetGameTimer() - GUI.Time) > 150 then
-  		ESX.ShowInventory()
-	  	GUI.Time  = GetGameTimer()
-    end
-
-  end
+		if IsControlPressed(0, Keys["F2"]) and not ESX.UI.Menu.IsOpen('default', 'es_extended', 'inventory') and (GetGameTimer() - GUI.Time) > 150 then
+			ESX.ShowInventory()
+			GUI.Time  = GetGameTimer()
+		end
+	end
 end)
 ```
 et les lignes :

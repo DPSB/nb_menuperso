@@ -1,6 +1,6 @@
 local canHandsUp = true
-local GUI							= {}
-GUI.Time							= 0
+local GUI = {}
+GUI.Time = 0
 
 AddEventHandler("handsup:toggle", function(param)
 	canHandsUp = param

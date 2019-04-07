@@ -1,12 +1,10 @@
 local crouched = false
-local GUI							= {}
-GUI.Time							= 0
 
 Citizen.CreateThread( function()
-	while true do 
-		Citizen.Wait( 1 )
+	while true do
+		Citizen.Wait(1)
 
-		local ped = GetPlayerPed( -1 )
+		local ped = PlayerPedId()
 
 		if ( DoesEntityExist( ped ) and not IsEntityDead( ped ) ) then 
 			DisableControlAction( 1, Config.crouch.clavier, true )
@@ -26,9 +24,7 @@ Citizen.CreateThread( function()
 					elseif ( crouched == false ) then
 						SetPedMovementClipset( ped, "move_ped_crouched", 0.25 )
 						crouched = true 
-					end 
-					
-					GUI.Time  = GetGameTimer()
+					end
 				end
 			end 
 		end 
