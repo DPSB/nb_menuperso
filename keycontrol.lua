@@ -505,10 +505,6 @@ Citizen.CreateThread(function()
 			DisableControlAction(0, 140, active) -- coup de poing
 			DisableControlAction(0, 80, active) -- Camera aleatoire en voiture
 			DisableControlAction(0, 73, active) -- Camera aleatoire en voiture
-			
-			if IsDisabledControlJustReleased(0, 24) or IsDisabledControlJustReleased(0, 142) then -- MeleeAttackAlternate
-				SendNUIMessage({type = "click"})
-			end
 		end
 			break
 	end
